@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparación de Algoritmos de Ordenamiento</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Comparación de Algoritmos de Ordenamiento</h1>
+            <p>Analiza el rendimiento de diferentes algoritmos de ordenamiento en diversos escenarios</p>
+        </header>
+        
+        <div class="controls">
+            <div class="control-group">
+                <h3>Algoritmos de Ordenamiento</h3>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="bubble" checked>
+                        <label for="bubble">Bubble Sort</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="insertion" checked>
+                        <label for="insertion">Inserción Sort</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="selection" checked>
+                        <label for="selection">Selección Sort</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="quick" checked>
+                        <label for="quick">Quick Sort</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="merge" checked>
+                        <label for="merge">Merge Sort</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="heap" checked>
+                        <label for="heap">Heap Sort</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="hash">
+                        <label for="hash">Hash Sort</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="bucket" checked>
+                        <label for="bucket">Bucket Sort</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="radix" checked>
+                        <label for="radix">Radix Sort</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <h3>Tamaños de Arreglo</h3>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="size100" checked>
+                        <label for="size100">100 elementos</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="size1000" checked>
+                        <label for="size1000">1000 elementos</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="size10000" checked>
+                        <label for="size10000">10000 elementos</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="size100000">
+                        <label for="size100000">100000 elementos</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <h3>Tipo de Orden</h3>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="sorted" checked>
+                        <label for="sorted">Ordenado</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="partially" checked>
+                        <label for="partially">Mediamente ordenado</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="reversed" checked>
+                        <label for="reversed">Inverso</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <h3>Ejecutar Pruebas</h3>
+                <button id="runTests">Ejecutar Pruebas</button>
+                <button id="resetResults">Limpiar Resultados</button>
+            </div>
+        </div>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Ejecutando pruebas de ordenamiento...</p>
+        </div>
+        
+        <div class="results">
+            <div class="results-section">
+                <h3>Resultados por Método</h3>
+                <table id="methodResults">
+                    <thead>
+                        <tr>
+                            <th>Algoritmo</th>
+                            <th>Tiempo Promedio (ms)</th>
+                            <th>Mejor Escenario</th>
+                            <th>Peor Escenario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Los resultados se insertarán aquí -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="results-section">
+                <h3>Resultados por Escenario</h3>
+                <table id="scenarioResults">
+                    <thead>
+                        <tr>
+                            <th>Escenario</th>
+                            <th>Mejor Algoritmo</th>
+                            <th>Peor Algoritmo</th>
+                            <th>Diferencia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Los resultados se insertarán aquí -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <h3>Comparación de Rendimiento</h3>
+            <canvas id="performanceChart"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
